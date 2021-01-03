@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/name_txt"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toStartOf="@+id/name_txt"
+        app:layout_constraintTop_toBottomOf="@+id/name_txt" />
 
     <ImageView
         android:id="@+id/imageView"
