@@ -25,8 +25,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //1. JSON link on Internet https://api.themoviedb.org/3/movie/550?api_key=c724c2f6d167ea8171215693861f07ba
-    private static String JSON_URL = "https://api.themoviedb.org/3/movie/550?api_key=c724c2f6d167ea8171215693861f07ba";
+    //1. JSON link on Internet https://run.mocky.io/v3/ee97f344-d177-489b-8630-08ede9439b41
+    private static String JSON_URL = "https://run.mocky.io/v3/ee97f344-d177-489b-8630-08ede9439b41";
 
     List<MovieModelClass> movieList;
     RecyclerView recyclerView;
