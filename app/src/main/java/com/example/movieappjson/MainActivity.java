@@ -25,8 +25,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //1. JSON link on Internet https://run.mocky.io/v3/ee97f344-d177-489b-8630-08ede9439b41
-    private static String JSON_URL = "https://run.mocky.io/v3/ee97f344-d177-489b-8630-08ede9439b41";
+    //1. Popular movies link  https://api.themoviedb.org/3/movie/popular?api_key=c724c2f6d167ea8171215693861f07ba
+    private static String JSON_URL = "https://api.themoviedb.org/3/movie/popular?api_key=c724c2f6d167ea8171215693861f07ba";
 
     List<MovieModelClass> movieList;
     RecyclerView recyclerView;
@@ -90,16 +90,16 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             try {
                 JSONObject jsonObject = new JSONObject(s);
-                JSONArray jsonArray = jsonObject.getJSONArray("moviz");
+                JSONArray jsonArray = jsonObject.getJSONArray("results");
 
                 for (int i = 0 ; i< jsonArray.length() ; i++){
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     MovieModelClass model = new MovieModelClass();
-                    model.setId(jsonObject1.getString("id"));
-                    model.setName(jsonObject1.getString("name"));
-                    model.setImg(jsonObject1.getString("image"));
+                    model.setId(jsonObject1.getString("vote_average"));
+                    model.setName(jsonObject1.getString("title"));
+                    model.setImg(jsonObject1.getString("poster_path"));
 
                     movieList.add(model);
                 }
