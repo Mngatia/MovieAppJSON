@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Adapter;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.InputStreamBitmapImageDecoderResourceDecoder;
+import com.bumptech.glide.request.target.ImageViewTarget;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<MovieModelClass> movieList;
     RecyclerView recyclerView;
+    ImageView header;
 
 
     @Override
@@ -39,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
         movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
+        header = findViewById(R.id.imageView5);
+
+        Glide.with(this)
+                .load(R.drawable.header)
+                .into(header);
 
         GetData getData = new GetData();
         getData.execute();
@@ -118,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
         MovieAdapter movieAdapter = new MovieAdapter(this, movieList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         recyclerView.setAdapter(movieAdapter);
     }
 }
